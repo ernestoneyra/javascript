@@ -1,0 +1,7 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    /*the pictures are 100px so the grid will be 3x4 grid. */
+    width: 400px;
+}
