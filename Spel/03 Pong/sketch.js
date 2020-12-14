@@ -17,21 +17,39 @@ function draw()
     playerPaddle.display(); // display method from paddle.js
     aiPaddle.display(); // samma för att den ska se likadan ut som den första.
 
+    
     playerPaddle.update();
     aiPaddle.update();
 
-    processAI();
-
     ball.update();
     ball.display();
+
+    processAI();
+
+    ball.hasHitPlayer(playerPaddle);
+    ball.hasHitAi(aiPaddle);
+
+    stroke(255);
+    line(width/2, 0, width/2, height);
+
+    /*
+    if (playerPaddle.isUp)
+    {
+        playerPaddle.up();
+    }else if (playerPaddle.isDown)
+    {
+        playerPaddle.isDown();
+    }*/
+
+
     
 }
 
 function processAI()
-{
-    let midddleOfPaddle = aiPaddle.y + aiPaddle.height / 2;
+    {
+    let middleOfPaddle = aiPaddle.y + aiPaddle.height / 2;
 
-    if (midddleOfPaddle > ball.y)
+    if (middleOfPaddle > ball.y)
     {
         aiPaddle.isUp = true;
         aiPaddle.isDown = false;
@@ -40,8 +58,7 @@ function processAI()
         aiPaddle.isDown = true;
         aiPaddle.isUp = false;  
     }
-}
-
+    }
 
 
 function keyPressed()
