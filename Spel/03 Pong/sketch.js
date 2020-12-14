@@ -1,12 +1,13 @@
 let playerPaddle;
 let aiPaddle;
+let ball;
 
 function setup()
 {
     createCanvas(634, 351);
     playerPaddle = new Paddle(26) // the class Paddle from paddle.js
     aiPaddle = new Paddle(width - 48); // width - 48 bestämmer vart den ska vara horizontellt. 0 lägger den sig precis utanför spelplanen. ju högre desto längre till vänster
-
+    ball = new Ball();
     
 }
 
@@ -16,15 +17,32 @@ function draw()
     playerPaddle.display(); // display method from paddle.js
     aiPaddle.display(); // samma för att den ska se likadan ut som den första.
 
+    playerPaddle.update();
+    aiPaddle.update();
 
-    if (playerPaddle.isUp)
+    processAI();
+
+    ball.update();
+    ball.display();
+    
+}
+
+function processAI()
+{
+    let midddleOfPaddle = aiPaddle.y + aiPaddle.height / 2;
+
+    if (midddleOfPaddle > ball.y)
     {
-        playerPaddle.up();
-    }else if (playerPaddle.isDown)
+        aiPaddle.isUp = true;
+        aiPaddle.isDown = false;
+    }else
     {
-        playerPaddle.down();
+        aiPaddle.isDown = true;
+        aiPaddle.isUp = false;  
     }
 }
+
+
 
 function keyPressed()
 {
