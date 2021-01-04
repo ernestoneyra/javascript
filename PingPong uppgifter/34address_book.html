@@ -1,0 +1,85 @@
+<!--Denna uppgift är uppdelad för att göra den lite mer översiktlig.
+
+Del 1 Skapa en tabell med ett par personer i, t ex namn, mailadress, ålder/födelsedag.
+Skapa ett formulär som innehåller alla fälten i tabellen.
+
+Del 2 Låt användaren lägga till nya rader i tabellen genom att fylla i formuläret. Låt användaren ta bort rader genom att klicka på en knapp. (Guldstjärna om man lägger till en confirm som frågar om användaren verkligen vill ta bort.) Detta kan innebära en utmaning för eventhantering. Om er lösning inte fungerar, fundera på vilket element ni har lagt er eventhanterare och när.
+
+Del 3 Läs in datat som finns på denna gist och låt detta data fylla upp tabellen när ni laddar in sidan. https://gist.github.com/emmio-micke/398ac346526fd3d759729f32bd113402
+
+Del 4 Låt användaren kunna uppdatera uppgifter.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="34address_book.css">
+    <title>Adress Book</title>
+</head>
+<body>
+<div class="cont_table">
+    <table id="table"> <!--Beginning of Table-->
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Age</th>
+           </tr>
+       </thead>
+       <tbody>
+            <tr>
+                <td id="ernesto">Ernesto</td>
+                <td id="ernestoemail">vastermlm89@gmail.com</td>
+                <td id="ernestoage">30</td>
+            </tr>
+            <tr>
+                <td id="emma">Emma</td>
+                <td id="emmaemail">emma@gmail.com</td>
+                <td id="emmaage">33</td>
+            </tr>
+            <tr>
+                <td id="johan">Johan</td>
+                <td id="johanemail">johan@gmail.com</td>
+                <td id="johanage">29</td>
+            </tr>
+            <tr>
+                <td id="krister">Krister</td>
+                <td id="kristeremail">krister@gmail.com</td>
+                <td id="kristerage">31</td>
+            </tr>
+            <tr>
+                <td id="stina">Stina</td>
+                <td id="stinaemail">stina@gmail.com</td>
+                <td id="stinaage">35</td>
+            </tr>
+       </tbody>
+    </table><br> <!--End of Table-->
+    <button class="new_form">Update</button>
+    <button class="new_form">New</button>
+</div><br><br><!--End of Table Div-->
+
+<div id="cont_form">
+    <form class="form">
+        <label for="top"><h1>Contacts</h1></label><br><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="" value=""><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" value=""><br><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" value=""><br><br>
+        <button id="updateper">Update</button>
+        <button id="newper">New</button>
+
+
+    </form>
+    
+</div>
+
+
+
+</body>
+
+<script src="34address_book.js"></script>
+</html>
