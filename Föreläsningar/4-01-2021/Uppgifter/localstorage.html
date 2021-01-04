@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {border-radius: 10px;
+                background-color:aqua;
+                border: blue solid 1px};
+    </style>
+</head>
+<body>
+    <form>
+        <h1 class="name" value="">Name:</h1>
+        <input id="nameinput" value="">
+        <br>
+        <h1 class="email" value="">Email:</h1>
+        <input id="emailinput" value="">
+        <br><br>
+        <button type="submit" value="" id="enter">Submit</button>
+        <button type="delete" value="" id="delete">Delete</button>
+    </form>
+</body>
+<script>
+    /*document.addEventListener('DOMContentLoaded', () => {
+       
+
+        
+        
+
+    });
+    let namein = document.querySelector('#nameinput').innerHTML;
+        let emailin = document.querySelector('#emailinput').innerHTML;
+        let btn = document.querySelector('#enter');
+    btn.addEventListener('click', () => {
+        
+            localStorage.getItem('namein', 'emailin')
+        });*/
+       
+   /* btn.addEventListener('click', () => {
+        //let namein = document.querySelector('#nameinput');
+        //let emailin = document.querySelector('#emailinput');
+        //let btn = document.querySelector('#enter');
+
+        if (namein !== "" && emailin !== "") {
+            //let inname = localStorage.setItem('namein', 'emailin');
+            //let inemail = localStorage.setItem('emailin');
+            namein.innerHTML = inname;
+            emailin.innerHTML = inemail;
+        }
+        });*/
+
+        /*document.addEventListener('DOMContentLoaded', () => {
+            if (namein === "" && emailin === ""){
+                let nameinsi = localStorage.getItem('nameine', 'emailin');
+
+                namein.innerHTML = nameinsi;
+
+            }
+        })*/
+
+        document.addEventListener('DOMContentLoaded', () => {
+        let name = document.querySelector('#nameinput');
+        let email = document.querySelector('#emailinput');
+        let btn = document.querySelector('#enter');
+        let del_btn = document.querySelector('#delete');
+
+        name.value = localStorage.getItem('name', name.value);
+        email.value = localStorage.getItem('email', email.value);
+
+        btn.addEventListener('click', () => {
+            name.value = localStorage.setItem('name', name.value);
+            email.value = localStorage.setItem('email', email.value);
+        })
+        /*del_btn.addEventListener('click', () => {
+            name.value = localStorage.removeItem('name', name.value);
+            email.value = localStorage.removeItem('email', email.value);
+        })*/
+        del_btn.addEventListener('click', () => {
+            localStorage.clear();
+        })
+    });
+    
+
+</script>
+</html>

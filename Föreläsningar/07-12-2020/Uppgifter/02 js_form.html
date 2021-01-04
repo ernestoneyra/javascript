@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="test1" value="Test!"><br>
+        <input type="checkbox" id="check_box" value="Option is an empty">Checka this</input><br>
+
+        <button type="button" id="btnSave">spara</button>
+    </form>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(e) 
+    {
+        let name = document.getElementById("test1");
+        let check = document.getElementById("check_box");
+        
+        let button = document.getElementById("btnSave");
+
+        button.addEventListener("click", function(e)
+        {
+            
+            console.log(text.value);
+            console.log(check.value);
+            console.log(check.checked);
+            alert("you clicked the button")
+        })
+        
+    })
+</script>
+</html>

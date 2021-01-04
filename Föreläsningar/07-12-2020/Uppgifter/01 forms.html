@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <!--Name-->
+        <label for="name">Namn:</label><br>
+        <input id="name" type="text" placeholder="Namn" value="Ernesto"><br>
+
+        <!--Password-->
+        <label for="password">Password:</label><br>
+        <input id="password" type="password" placeholder="Password"><br>
+
+        <!--Email-->
+        <label for="email">E-post:</label><br>
+        <input id="email" type="text" placeholder="E-post:" value="ernes@gmail.com"><br>
+
+        <!--Birthday-->
+        <label for="year">Födelsedatum:</label><br>
+        <input form="birthday" id="bday" type="number" placeholder="yyyy-mm-dd" value=""><br>
+
+        <!--Favorite day-->
+        <label for="favday">Favoritdag</label><br>
+        <select id="favday" name="favoriteday">
+            <option value="Måndag">Måndag</option>
+            <option value="Tisdag">Tisdag</option>
+            <option value="Onsdag">Onsdag</option>
+            <option value="Torsdag">Torsdag</option>
+            <option value="Fredag">Fredag</option>
+            <option value="Lördag">Lördag</option>
+            <option value="Söndag">Söndag</option>
+        </select><br>
+
+        <!--Presentation-->
+        <label for="presentation">Meddelande</label><br>
+        <textarea id="presentation"></textarea><br>
+
+        <!--Age-->
+        <label for="age">Ålder:</label><br>
+
+        <input id="age" type="number" placeholder="ålder" value=""><br>
+
+        <!--Message-->
+        <label for="message">Message:</label><br>
+        <textarea id="message" maxlength="140">Meddelande</textarea><br>
+
+        <!--Color-->
+        <label for="color">Färg:</label>
+        <select id="favorite_color" name="colors" value="">
+            <option value="blue" selected>Blå</option>
+            <option value="green">Grön</option>
+            <option value="red">Röd</option>
+        </select><br>
+
+        <!--Mac vs PC-->
+        <label for="pref">Mac vs PC:</label><br>
+        <input type="radio" name="computer" id="mac" checked value="Prefer Mac">
+        <label for="Mac">Mac</label>
+        <input type="radio" name="computer" id="pc" value="Prefer PC">
+        <label for="Mac">PC</label><br>
+
+        <!--TV-shows-->
+        <label for="tv_show">Tv-serier du sett:</label><br>
+        <input id="checkFriends" type="checkbox" name="tv" value="Friends">Friends</input><br>
+        <input id="checkCSI" type="checkbox" name="tv" value="CSI">CSI
+</body>
+
+</html></input><br><input id="checkPsych" type="checkbox" name="tv" value="Psych">Psych</input><br><input
+    type="checkbox" id="check_box" value="Option is an empty">Checka this</input><br>Presentation:<br>
+<div id="presentation_output"
+    style="border: 1px solid black; border-radius: 10px; padding: 10px;min-height: 20px; background-color: white;">
+</div><button type="button" id="btnSave">spara</button></form>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+
+        let name = document.getElementById("name");
+        let mac = document.getElementById("mac");
+        let pc = document.getElementById("pc");
+
+        // Birthday////////////////////////////////////////////////////////////////////////
+        let bday = new Date(document.getElementById("bday").value);
+        let bday_month = bday.getMonth();
+        let bday_day = bday.getDate();
+        let today = new Date();
+        let one_day = 1000 * 60 * 60 *
+        24; // hur måna ms på en dag. 1000= en sekund 60sekunder på 1 minut, 60 minuter på 1 timme och 24 timmar på en dag.
+        let bday_year = today > new Date(today.getFullYear(), bday_month,
+            bday_day) // today är dagens datum är större än datumet som fylls i (inom parantes detta år) har hen fyllt år i år. ? today.getFullYear() + 1 // om deet stämmer räknas datumet ut till nästa år. .getfullyear (detta år) + 1 blir 2021. : today.getFullYear(); // om inte blir det detta år. månad och dag blir detsamma.
+        let next_bday = new Date(bday_year, bday_month, bday_day);
+        let days_to_bday = Math.ceil((next_bday - today) / one_day);
+        let age = today.getFullYear() - bday.getFullYear();
+        // //////////////////////////////////////////////////////////////////////////////////
+
+        let message = document.getElementById("message");
+        let favday = document.getElementById("favday");
+        let check = document.getElementById("check_box");
+        let button = document.getElementById("btnSave");
+
+        // /TV show
+        let friends = document.getElementById("checkFriends");
+        let csi = document.getElementById("checkCSI");
+        let psych = document.getElementById("checkPsych");
+        // ////
+
+        let presentation_output = document.getElementById("presentation_output");
+        let presentation = document.getElementById("presentation");
+
+        button.addEventListener("click", function (e) { // Name
+            console.log(`Hej ${
+            name.value
+        }!`);
+
+            // Favorite day
+            console.log(`Din favoritdag är ${
+            favday.value
+        }, stämmer det?`);
+
+            // Messsage
+
+
+            // Birthday
+            console.log(`Du är ${age} och fyller år om ${days_to_bday} dagar!`);
+
+            // Right age
+            let right_age = age == document.getElementById("age")
+                .value // == omvandlar från text till ett tal. ? '' : 'inte';
+
+            console.log(`Du skrev ${right_age} rätt ålder`);
+
+            // Checkbox
+            if (check.checked === true) {
+                console.log(check.value);
+            }
+
+
+            // Mac vs PC
+            if (mac.checked == true) {
+                console.log(mac.value);
+
+            }
+            if (pc.checked === true) {
+                console.log(pc.value);
+            }
+
+            // Color
+            document.body.style.backgroundColor = document.getElementById("favorite_color").value;
+
+            // TV-show
+            let tv_show = [];
+
+            if (friends.checked === true)
+                tv_show.push(friends.value);
+
+
+
+            if (csi.checked === true)
+                tv_show.push(csi.value);
+
+
+
+            if (psych.checked === true)
+                tv_show.push(psych.value);
+
+
+
+            console.log(`Tv serier jag sett är ${
+            tv_show.join(', ')
+        }`);
+
+            // Presentation
+            presentation_output.innerHTML = presentation.value;
+
+            // END
+        })
+
+    })
+</script>
+
+</html>

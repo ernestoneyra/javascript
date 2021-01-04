@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="width">Width</div><br>
+<input id="widthinput" type="number" value=""><br>
+
+<div id="height" class="">Height</div><br>
+<input id="heightinput" type="number" value=""><br><br>
+
+<div id="border" class="divborder" style="border: 2px solid;"></div>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function(event)
+{
+
+ let div = document.getElementById("border");
+ let width = document.getElementById("width");
+ let height = document.getElementById("height");
+ let widthinput = document.getElementById("widthinput");
+ let heightinput = document.getElementById("heightinput");
+
+ div.style.backgroundColor = 'blue';
+
+ 
+
+widthinput.addEventListener("keydown", function(event)
+{
+    let x = event.key;
+    if (x == 'Enter')
+    {
+        border.style.width = widthinput.value + 'px';
+        div.style.backgroundColor = 'green';
+    }
+    
+    
+    
+})
+heightinput.addEventListener("keydown", function(event)
+{
+    let x = event.key;
+    if (x == 'Enter')
+    {
+        border.style.height = heightinput.value + 'px';
+        div.style.backgroundColor = 'yellow';
+    }
+    
+})
+
+
+ 
+
+})
+</script>
+</html>

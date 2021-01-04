@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <!--Name-->
+    <label for="name">Namn:</label><br>
+    <input id="name" type="text" placeholder="Namn" value=""><br>
+    <br>
+    <!--Password-->
+    <label for="password">Password:</label><br>
+    <input id="password" type="password" placeholder="Password"><br>
+    <br>
+    <!--Email-->
+    <label for="email">E-post:</label><br>
+    <input id="email" type="text" placeholder="E-post:" value=""><br>
+    <br>
+
+    <!--Birthday-->
+    <label for="year">Födelsedatum:</label><br>
+    <input form="birthday" id="bday" type="number" placeholder="yyyy-mm-dd" value=""><br>
+    <br>
+
+    <!--Favorite day-->
+    <label for="favday">Favoritdag</label><br>
+    <select id="favday" name="favoriteday">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select><br><br>
+
+
+    <!--Age-->
+    <label for="age">Ålder:</label><br>
+
+    <input id="age" type="number" placeholder="ålder" value=""><br><br>
+    
+
+    <!--Message-->
+    <label for="message">Message:</label><br>
+    <textarea id="message" maxlength="140">...</textarea><br>
+    <br>
+
+    <!--Color-->
+    <label for="color" >Färg:</label>
+    <select id="favcolor" name="colors" value="">
+        <option value="blue" selected>Blå</option>
+        <option value="green">Grön</option>
+        <option value="red">Röd</option>
+    </select><br>
+    <br>
+
+    <!--Mac vs PC-->
+    <label for="pref">Mac vs PC:</label><br>
+    <input type="radio" name="computer" id="mac" checked value="prefer Mac">
+    <label for="mac">Mac</label>
+    <input type="radio" name="computer" id="pc" value="prefer PC">
+    <label for="pc">PC</label><br>
+    <br>
+
+    <!--TV-shows-->
+    <label for="tv_show">Tv-serier du sett:</label><br>
+    <input id="checkFriends" type="checkbox" name="tv" value="Friends">Friends</input><br>
+    <input id="checkCSI" type="checkbox" name="tv" value="CSI">CSI</input><br>
+    <input id="checkPsych" type="checkbox" name="tv" value="Psych">Psych</input><br>
+
+    
+    <input type="checkbox" id="check_box" value="Option is an empty">Checka this</input><br>
+    <br>
+
+   <label for="presentation">Presentation:</label> <br>
+    <textarea id="presentation_output" style="border: 1px solid black; border-radius: 10px; padding: 10px;min-height: 100px; min-width: 300px; background-color: white;"></textarea>
+    <br><br>
+
+    <button type="button" id="btnSave">Submit</button>
+</form>
+</body>
+<script src="copy.js"></script>
+</html>
