@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+}
+.container {
+    margin: auto;
+}
+
+
+/* Start Game Area */
+
+.players {
+    display: flex;
+    flex-direction: row;
+}
+
+.clearboth {
+    clear: both;
+}
+
+.player {
+    border-style: solid;
+    width: 20%;
+    height: 350px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.player span {
+    margin: 20px;
+    width: 70%;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.player .icons1 {
+    font-size: 5em;
+    color: rgba(65, 105, 225, .8);
+}
+.player .icons2 {
+    font-size: 5em;
+    color: rgba(34, 112, 67, 0.8);
+}
+
+.player .player_sticks {
+    margin: 20px;
+    width: 200px;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.game_area {
+    width: 55%;
+    position: relative;
+    background-color: #EEE;
+}
+
+.game_area #game_sticks {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.game_area #game_sticks img {
+    width: auto;
+    height: 100px;
+    
+}
+.game_area #game_sticks img:hover {
+    border-bottom: 2px solid aqua;
+}
+
+.choice {
+    text-align: center;
+    margin: 10px;
+}
+
+.start_over {
+    text-align: center;
+    margin: 10px;
+}
+
+.start_over button, .choice button{
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    background-color: rgba(38, 81, 110, 0.8);
+    color: #FFF;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.alert{
+    border-radius: 10px;
+}
+
+.active {
+    background-color: rgba(206, 105, 47, 0.8);
+}
+
+.info_area {
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+
+.highscore {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+}
+
+.highscoreHid {
+    visibility: hidden;
+}
+
+.highscore span {
+    display: block;
+    font-size: 18px;
+    padding: .5rem;
+}
+
+
+/* End Game Area */
+
+
+/* Start Grid System */
+
+@media (min-width: 576px) {
+    /* Small Devices => Landscape Phones */
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Desktops */
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Large Screens */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+/* End Grid System */

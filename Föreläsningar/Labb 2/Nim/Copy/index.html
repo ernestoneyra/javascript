@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bs_css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/Copy/style.css">
+    <title>Nim</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-light p-3 mb-3 navbar-nav">
+            <h1>Nim</h1>
+        </nav>
+    </header>
+
+    
+    <div class="container">
+        <div class="players">
+            <div class="player left" data-name="" id="player1ID">
+                <span class="icons1"></span>
+                <span id="name_one" value="">Player 1</span>
+                <span class="player_sticks"></span>
+            </div>
+            <div class="game_area">
+                <div id="game_sticks"></div>
+            </div>
+            <div class="palyer right" data-name="" id="player2ID">
+                <span class="icons2"><i class="fas fa-user"></i></span>
+                <span id="name_two" value="">Player 2</span>
+                <span class="player_sticks"></span>
+            </div>
+        </div>
+        <div class="choices">
+            <button id="btn1" class="btn-choice">1</button>
+            <button id="btn2" class="btn-choice">2</button>
+            <button id="btn3" class="btn-choice">3</button>
+        </div>
+        <div class="start_over">
+            <button id="btn_over">Börja om</button>
+            <button id="hig_btn">Highscore</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="info_area">
+            <div class="alert alert-primary col-4 float-right" role="alert">
+                <p>Spelarna turas om att ta en, två eller tre stickor.<br>
+                Spelaren som tar den sista stickan förlorar.</p>
+            </div>
+            <div class="highscore highscoreHid" id="highscoreID">
+                <div id="player1score">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.5/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/script.js"></script>
+</html>
