@@ -44,7 +44,7 @@
                     movie_results.appendChild(img);
 
 
-                    console.log(img);
+                    //console.log(img);
                     // End of search result
 
 
@@ -54,15 +54,29 @@
                     .then(response => response.json())
                     .then(data => {
                         let actors = data.Actors;
-                        let year = data.Year;
+                        let released = data.Released;
                         let plot = data.Plot;
                         let title = data.Title;
-                        let modal_open = document.querySelector('p');
-                        let modal_title = document.querySelector('h4')
-                        modal_open.innerHTML = `Actors: ${actors} \n Year: ${year} \n Plot: ${plot}`
+                        let poster = data.Poster;
+                        let modal_image = document.querySelector('.modal-img');
+                        let modal_released = document.querySelector('.modal-released');
+                        let modal_title = document.querySelector('.modal-title');
+                        let modal_actor = document.querySelector('.modal-actor');
+                        let modal_plot = document.querySelector('.modal-plot');
                         modal_title.innerHTML = `${title}`
+                        modal_released.innerHTML = `Released: ${released}`
+                        modal_actor.innerHTML = `Actors: ${actors}`
+                        modal_plot.innerHTML = `Plot: ${plot}`
+                        if (data.Poster === "N/A")
+                        {
+                            modal_image.src = './images/ni_image.jpg';
+                        }else{
+                            modal_image.src = poster;
+                        }
+                        
                         //console.log(`Actors: ${actors} \nYear: ${year} \nPlot: ${plot}`);
                        
+                        
                     })
                     
                     
@@ -72,7 +86,7 @@
                         {
                             fetch(`http://www.omdbapi.com/?s=${search}&apikey=${api_key}`)
                             .then(response => response.json())
-                            console.log(movie.imdbID)
+                            console.log(movie.Poster)
                             getInfo();
                             
                            

@@ -1,17 +1,26 @@
-.carouselCont {
-  margin-top: 0px;
-}
-
 body {
   background-color: black;
 }
 
-body .form-control {
+body .form {
   min-width: 60%;
+  margin-bottom: 15px;
 }
 
 body .btn {
   border-radius: 100px;
-  visibility: hidden;
+}
+
+#myModal .modal-content {
+  width: 1000px;
+  background-color: black;
+}
+
+#myModal h2 {
+  color: #ffffff;
+}
+
+#myModal p {
+  color: #ffffff;
 }
 /*# sourceMappingURL=filmsite.css.map */

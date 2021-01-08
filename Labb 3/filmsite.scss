@@ -1,15 +1,29 @@
+$text-color: #ffffff;
 
-.carouselCont{
-    margin-top: 0px;
-}
 body {
     background-color: black;
-    .form-control{
+    .form{
         min-width: 60%;
+        margin-bottom: 15px;
         
     }
     .btn {
             border-radius: 100px;
-            visibility: hidden;
+            //visibility: hidden;
     }
 }
+
+#myModal{
+    .modal-content{
+        width: 1000px;
+        background-color: black;
+    }
+    h2{
+        color: $text-color;
+        
+    }
+    p{
+        color: $text-color;
+    }
+}
+
