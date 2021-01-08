@@ -1,0 +1,13 @@
+.form-control {
+  min-width: 60%;
+}
+
+.btn {
+  border-radius: 100px;
+  visibility: hidden;
+}
+
+.carouselCont {
+  margin-top: 0px;
+}
+/*# sourceMappingURL=filmsite.css.map */
