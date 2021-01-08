@@ -39,7 +39,11 @@
                   
                     img.setAttribute('class', movie.Title);
                     img.setAttribute('alt', movie.Title);
+                    img.setAttribute('data-target', '#myModal')
+                    img.setAttribute('data-toggle', 'modal')
                     movie_results.appendChild(img);
+
+
                     console.log(img);
                     // End of search result
 
@@ -49,21 +53,33 @@
                         fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${api_key}`)
                     .then(response => response.json())
                     .then(data => {
-                        alert(`Actors: ${data.Actors} \nYear: ${data.Year} \nPlot: ${data.Plot}`);
+                        let actors = data.Actors;
+                        let year = data.Year;
+                        let plot = data.Plot;
+                        let title = data.Title;
+                        let modal_open = document.querySelector('p');
+                        let modal_title = document.querySelector('h4')
+                        modal_open.innerHTML = `Actors: ${actors} \n Year: ${year} \n Plot: ${plot}`
+                        modal_title.innerHTML = `${title}`
+                        //console.log(`Actors: ${actors} \nYear: ${year} \nPlot: ${plot}`);
                        
                     })
                     
-                    return movie;
+                    
+                   // return movie;
                     }
                     img.addEventListener('click', ()=>
                         {
                             fetch(`http://www.omdbapi.com/?s=${search}&apikey=${api_key}`)
                             .then(response => response.json())
                             console.log(movie.imdbID)
-                            return getInfo();
+                            getInfo();
+                            
+                           
                         })
                     /// End of movie info
 
+                    
                 }
             })
         }
@@ -79,3 +95,4 @@
 
 
 
+    
