@@ -41,11 +41,11 @@ searchfield.addEventListener('keyup', function (e) {
                     }
                 }
             }else {
-                search_results.innerHTML = '<div class="not_found bg-light  text-danger">No matches found...</div>';
+                    search_results.innerHTML = '<div class="not_found bg-light  text-danger">No matches found...</div>';
             }
         })
     }else {
-        autocomplete_results.innerHTML = ''
+        search_results.innerHTML = ''
     }
 })
 
@@ -75,7 +75,7 @@ function movie_resultsimg(movie) {
     // Function to get more info about the movie
     async function getInfo() {
         fetch(`http://www.omdbapi.com/?i=${movie.imdbID
-            }&apikey=${api_key}`)
+            }&apikey=${api_key}&plot=full`)
             .then(response => response.json())
             .then(data => {
             // Puts the data in to variables
