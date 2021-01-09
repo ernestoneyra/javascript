@@ -19,11 +19,12 @@
     <nav class="navbar navbar-light bg-info mb-2">
         <div class="container-fluid">
           <a class="navbar-brand">Welcome to the world of movies</a>
-          <form class="d-flex">
+          <form class="d-flex flex-wrap">
             <input id="searchfield" class="form-control mr-sm-2 mt-2 col-12" type="search" autocomplete="off" placeholder="Search for title..." aria-label="Search movie">
-            <div id="autocomplete" class="movie_links"></div>
+            
            <!-- <button class="btn btn-outline-success" type="submit">Search</button>-->
           </form>
+          <div id="autocomplete" class="movie_links bg-info"></div>
         </div>
       </nav>
       <!--End of form-->
@@ -115,7 +116,7 @@
 
 <!--Autocomplete .js-->
 <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
-<!--<script src="filmsite.js"></script>-->
-<script src="filmsite_copy.js"></script>
+<script src="filmsite.js"></script>
+<!--<script src="filmsite_copy.js"></script>-->
 <!--<script src="search.js"></script>-->
 </html>

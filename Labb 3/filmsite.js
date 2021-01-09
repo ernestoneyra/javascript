@@ -41,12 +41,12 @@ searchfield.addEventListener('keyup', function (e) {
                     }
                 }
             }else {
-                searchfield.classList.add('bg-danger')
-                    search_results.innerHTML = '<div class="not_found bg-light  text-danger">No matches found...</div>';
+                //searchfield.classList.add('bg-danger')
+                    search_results.innerHTML = '<div class="not_found bg-danger">No matches found...</div>';
             }
         })
     }else {
-        searchfield.classList.remove('bg-danger')
+       // searchfield.classList.remove('bg-danger')
         search_results.innerHTML = ''
         autocomplete_results.innerHTML = ''
     }
