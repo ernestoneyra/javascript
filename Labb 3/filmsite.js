@@ -42,11 +42,11 @@ searchfield.addEventListener('keyup', function (e) {
                 }
             }else {
                 //searchfield.classList.add('bg-danger')
-                    search_results.innerHTML = '<div class="not_found bg-danger">No matches found...</div>';
+                    search_results.innerHTML = '<div class="not_found bg-light  text-danger">No matches found...</div>';
             }
         })
     }else {
-       // searchfield.classList.remove('bg-danger')
+        //searchfield.classList.remove('bg-danger')
         search_results.innerHTML = ''
         autocomplete_results.innerHTML = ''
     }
@@ -65,6 +65,7 @@ function movie_resultsimg(movie) {
     }
     //Create images
     img.setAttribute('class', movie.Title);
+    img.setAttribute('id', 'constflu');
     img.setAttribute('alt', movie.Title);
     img.setAttribute('data-target', '#myModal')
     img.setAttribute('data-toggle', 'modal')
@@ -105,15 +106,23 @@ function movie_resultsimg(movie) {
         // return movie;
     }
     ///End of getInfo function
+    
+
 
     //EventListener on the img to run the more info function
-    img.addEventListener('click', () => {
+    img.addEventListener('mousedown', () => {
         fetch(`http://www.omdbapi.com/?s=${search}&apikey=${api_key}`)
         .then(response => response.json())
         //console.log(movie.Poster)
         getInfo();
-
-
     })
     //End of eventListener
+    img.addEventListener('mouseover', () => {
+        img.style.border = '1px solid #17a2b8';
+    })
+    img.addEventListener('mouseleave', () => {
+        img.style.border = '';
+    })
 }
+
+
