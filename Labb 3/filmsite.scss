@@ -27,3 +27,6 @@ body {
         color: $text-color;
     }
 }
+.modal-open .container-fluid, .modal-open  .cont_blur {
+  -webkit-filter: blur(5px) grayscale(90%);
+}

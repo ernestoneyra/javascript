@@ -14,7 +14,6 @@ body .btn {
 #myModal .modal-content {
   width: 1000px;
   background-color: black;
-  
 }
 
 #myModal h2 {
@@ -23,5 +22,9 @@ body .btn {
 
 #myModal p {
   color: #ffffff;
+}
+
+.modal-open .container-fluid, .modal-open .cont_blur {
+  -webkit-filter: blur(5px) grayscale(90%);
 }
 /*# sourceMappingURL=filmsite.css.map */
