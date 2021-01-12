@@ -14,10 +14,22 @@
 </head>
 <body> 
     <!--Beginning of main container--> 
-<div class="container col-8 cont_blur">  
+<div class="container-fluid col-lg-10 col-sm-9 cont_blur">  
     <!--Beginning of form-->  
-    <nav class="navbar navbar-light bg-info mb-2">
+    <nav class="navbar col-12 navbar-light bg-info mb-2">
         <div class="container-fluid">
+            <div class="btn-group dropright">
+                <button type="button" class="btn row btn-danger dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Favorites
+                </button>
+                
+                <div id="favs" class="dropdown-menu  man_btn">My top movies
+                    <!-- <button class="btn btn-danger">Clear all</button> -->
+                    <!-- <a class="dropdown-item" ></a> -->
+                    
+                  <!-- Dropdown menu links -->
+                </div>
+              </div>
           <a class="navbar-brand">Welcome to the world of movies</a>
           <form class="d-flex flex-wrap">
             <input id="searchfield" class="form-control mr-sm-2 mt-2 col-12" type="search" autocomplete="off" placeholder="Search for title..." aria-label="Search movie">
@@ -41,7 +53,7 @@
 
     <header>
         <div class="main_img mb-4">
-            <img src="./images/movie-poster.jpg" class="d-block w-100"> 
+            <img src="./images/movie-poster.jpg" style="max-height: 700px;" class="d-block w-100"> 
         </div>
         <!--
         Start of image carousel
@@ -62,14 +74,21 @@
         </div> -->
     </header><!--End of image carousel-->
     
-
-
+    <!--Favorite list-->
+    <!-- <div class="container-fluid">
+   <div class="row">
+    <div id="favs" class="bg-light col-4"><h5>Top 10 favorite Movies</h2>
+       
+    </div>
+     -->
 
     <!--start of movie results-->
     <div id="movies" class="resultDiv d-flex flex-wrap">
-       
-    </div><!--End of movie results-->
+        
 
+    </div><!--End of movie results-->
+    </div>
+    <!-- </div> -->
     </div><!--End of main container-->
 
 <!-- Beginning Modal 1 -->
@@ -100,7 +119,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+                <button type="button" id="favBtn" class="btn btn-primary" data-dismiss="modal">Add to favorites</button>
             </div>
 
         </div>
@@ -120,7 +139,7 @@
 
 <!--Autocomplete .js-->
 <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
-<script src="filmsite.js"></script>
-<!--<script src="filmsite_copy.js"></script>-->
+<!---<script src="filmsite.js"></script>-->
+<script src="filmsite_copy.js"></script>
 <!--<script src="search.js"></script>-->
 </html>

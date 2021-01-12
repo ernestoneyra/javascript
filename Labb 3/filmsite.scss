@@ -11,6 +11,16 @@ body {
             border-radius: 100px;
             //visibility: hidden;
     }
+    #favs{
+        border: 1px solid blue;
+        border-radius: 10px;
+        text-align: center;
+        height: max-content;
+        width: max-content;
+      }
+      .dropdown-item:hover{
+        cursor: pointer;
+      }
 }
 
 #myModal{

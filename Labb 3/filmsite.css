@@ -11,6 +11,22 @@ body .btn {
   border-radius: 100px;
 }
 
+body #favs {
+  border: 1px solid blue;
+  border-radius: 10px;
+  text-align: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+body .dropdown-item:hover {
+  cursor: pointer;
+}
+
 #myModal .modal-content {
   width: 1000px;
   background-color: black;
